@@ -1,0 +1,32 @@
+#board {
+    width: 480px;
+    height: 480px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+}
+
+.white {
+    background: #eee;
+}
+
+.black {
+    background: #777;
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+}
+
+.selected {
+    outline: 2px solid red;
+}
+
+.highlight {
+    box-shadow: inset 0 0 0 4px yellow;
+}

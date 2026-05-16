@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess Replay</title>
+    <link rel="stylesheet" href="{% static 'game/style.css' %}">
+    <style>
+        #board {
+            display: grid;
+            grid-template-columns: repeat(8, 60px);
+            grid-template-rows: repeat(8, 60px);
+            gap: 0;
+            width: 480px;
+            height: 480px;
+        }
+        .cell {
+            width: 60px;
+            height: 60px;
+        }
+        .white { background-color: #f0d9b5; }
+        .black { background-color: #b58863; }
+        .cell img { width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Replay Game #{{ game.id }}</h1>
+    <div id="board" data-game-id="{{ game.id }}"></div>
+
+    <!-- Подключаем JS -->
+    <script src="{% static 'game/replay.js' %}"></script>
+    <script>
+        // Берём game_id из data-атрибута
+        const GAME_ID = document.getElementById("board").dataset.gameId;
+        loadReplay(GAME_ID);  // запускаем реплей
+    </script>
+</body>
+</html>
