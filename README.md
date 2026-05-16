@@ -15,7 +15,7 @@ Real-time chess game using Django Channels and WebSocket.
 
 bash
 
-git clone https://github.com/HyiMamonta/chess.git
+git clone https://github.com/xan1t/chess.git
 
 cd chess
 
